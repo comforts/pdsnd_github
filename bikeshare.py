@@ -142,9 +142,16 @@ def trip_duration_stats(df):
     mean_minutes, mean_seconds = divmod(mean_travel_time_seconds, 60)
     mean_hours, mean_minutes = divmod(mean_minutes, 60)
 
-    print(
-        f"Total travel time: {int(total_hours)} hours, {int(total_minutes)} minutes, and {int(total_seconds)} seconds")
-    print(f"Mean travel time: {int(mean_hours)} hours, {int(mean_minutes)} minutes, and {int(mean_seconds)} seconds")
+    if int(total_hours) <= 0:
+        print(
+            f"Total travel time: {int(total_minutes)} minutes, and {int(total_seconds)} seconds")
+        print(
+            f"Mean travel time: {int(mean_minutes)} minutes, and {int(mean_seconds)} seconds")
+    else:
+        print(
+            f"Total travel time: {int(total_hours)} hours, {int(total_minutes)} minutes, and {int(total_seconds)} seconds")
+        print(
+            f"Mean travel time: {int(mean_hours)} hours, {int(mean_minutes)} minutes, and {int(mean_seconds)} seconds")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
