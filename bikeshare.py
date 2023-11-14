@@ -202,7 +202,7 @@ def display_data(df):
             pd.set_option('display.max_columns', None)
 
             # Displaying specified columns with formatted values
-            print(chunk[['Start Time', 'End Time', 'month', 'day_of_week', 'hour', 'Trip Duration', 'Start Station',
+            print(chunk[['Start Time', 'End Time', 'Trip Duration', 'Start Station',
                          'End Station', 'User Type']])
 
             start_index = end_index
