@@ -5,7 +5,7 @@
 Programming For Data Science  - GIT and GITHUB Project
 
 ### Description
-Describe what your project is about and what it does
+The project demonstrates the main features of Gi and GitHub, and how to use it for project collaboration
 
 ### Files used
 Include the files used
