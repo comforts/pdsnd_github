@@ -92,17 +92,17 @@ def time_stats(df):
     # Display the most common month
     months = ['January', 'February', 'March', 'April', 'May', 'June', 'July']
     common_month = df['month'].mode()[0]
-    print(f"The most common month is: {common_month} ({months[common_month - 1]})")
+    print(f"The most common month: {common_month} ({months[common_month - 1]})")
 
     # Display the most common day of the week
     common_day = df['day_of_week'].mode()[0]
-    print(f"The most common day of the week is: {common_day}")
+    print(f"The most common day of the week: {common_day}")
 
     # Display the most common start hour
     df['hour'] = df['Start Time'].dt.hour
     common_hour = df['hour'].mode()[0]
     common_hour_12hr = pd.to_datetime(str(common_hour), format='%H').strftime('%I %p')
-    print(f"The most common start hour is: {common_hour} ({common_hour_12hr})")
+    print(f"The most common start hour: {common_hour} ({common_hour_12hr})")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
@@ -115,16 +115,16 @@ def station_stats(df):
 
     # Display most commonly used start station
     common_start_station = df['Start Station'].mode()[0]
-    print(f"The most commonly used start station is: {common_start_station}")
+    print(f"The most commonly used start station: {common_start_station}")
 
     # Display most commonly used end station
     common_end_station = df['End Station'].mode()[0]
-    print(f"The most commonly used end station is: {common_end_station}")
+    print(f"The most commonly used end station: {common_end_station}")
 
     # Display most frequent combination of start station and end station trip
     df['Trip'] = df['Start Station'] + ' to ' + df['End Station']
     common_trip = df['Trip'].mode()[0]
-    print(f"The most frequent combination of start station and end station trip is: {common_trip}")
+    print(f"The most frequent combination of start station and end station trip: {common_trip}")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
@@ -143,8 +143,8 @@ def trip_duration_stats(df):
     mean_hours, mean_minutes = divmod(mean_minutes, 60)
 
     print(
-        f"Total travel time is: {int(total_hours)} hours, {int(total_minutes)} minutes, and {int(total_seconds)} seconds")
-    print(f"Mean travel time is: {int(mean_hours)} hours, {int(mean_minutes)} minutes, and {int(mean_seconds)} seconds")
+        f"Total travel time: {int(total_hours)} hours, {int(total_minutes)} minutes, and {int(total_seconds)} seconds")
+    print(f"Mean travel time: {int(mean_hours)} hours, {int(mean_minutes)} minutes, and {int(mean_seconds)} seconds")
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-' * 40)
@@ -173,9 +173,9 @@ def user_stats(df):
         earliest_birth_year = int(df['Birth Year'].min())
         most_recent_birth_year = int(df['Birth Year'].max())
         common_birth_year = int(df['Birth Year'].mode()[0])
-        print(f"\nEarliest birth year is: {earliest_birth_year}")
-        print(f"Most recent birth year is: {most_recent_birth_year}")
-        print(f"Most common birth year is: {common_birth_year}")
+        print(f"\nEarliest birth year: {earliest_birth_year}")
+        print(f"Most recent birth year: {most_recent_birth_year}")
+        print(f"Most common birth year: {common_birth_year}")
     else:
         print("\nBirth year data not available for this city.")
 
